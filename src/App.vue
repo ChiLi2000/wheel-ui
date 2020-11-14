@@ -1,18 +1,14 @@
 <template>
-<div>hi
- 
-</div>
- <chili/>
+<div>hi 
+  <router-link to="/">chili</router-link>
+  |<router-link to="/xxx">chili2</router-link>
+  </div>
+<hr/>
+<router-view/>
 </template>
 
 <script>
-import chili from './components/chili.vue'
-
-
 export default {
   name: 'App',
-  components: {
-    chili
-  }
 }
 </script>
