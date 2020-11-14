@@ -1,11 +1,11 @@
 <template>
     <div class="topnav">
-            <div class="logo" @click="toggleMenu">logo</div>
+            <div class="logo">logo</div>
             <ul class="menu">
                 <li>菜单1</li>
                 <li>菜单2</li>
             </ul>
-            <span class="toggleAside"></span>
+            <span class="toggleAside" @click="toggleMenu"></span>
         </div>
 </template>
 <script lang="ts">
