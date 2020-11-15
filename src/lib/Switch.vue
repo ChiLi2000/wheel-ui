@@ -15,7 +15,7 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h:22px;
 $h2:18px;
 .wheel-switch{
