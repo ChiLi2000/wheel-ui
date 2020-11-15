@@ -1,5 +1,5 @@
 <template>
-   <button class="wheel-button" :class="classes">
+   <button class="wheel-button" :class="classes" :disabled="disabled">
         <slot/>
     </button>
 </template>
@@ -17,7 +17,11 @@ export default {
         },
         level:{
             type:String,
-            default:"normal"
+            default:"normal",
+        },
+        disabled:{
+            type:Boolean,
+            default:false,
         }
     },
     setup(props) {
@@ -40,6 +44,7 @@ $color:#333;
 $blue:#40a9ff;
 $radius:4px;
 $red:red;
+$grey:grey;
 .wheel-button{
     box-sizing: border-box;
     height: $h;
@@ -141,6 +146,21 @@ $red:red;
                     color: darken($red, 10%);
                 }
             }
+     }
+     &.wheel-theme-button{
+         &[disabled]{
+             cursor: not-allowed;
+             color: $grey;
+             &:hover{
+                 border-color:$grey;
+             }
+         }
+     }
+     &.wheel-theme-link,&.wheel-theme-text{
+         &[disabled]{
+             cursor: not-allowed;
+             color: $grey;
+         }
      }
     
 }
