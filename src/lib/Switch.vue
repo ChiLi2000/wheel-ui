@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggle" :class="{checked:value}"><span></span></button>
+    <button class="wheel-switch" @click="toggle" :class="{'wheel-checked':value}"><span></span></button>
 </template>
 <script lang="ts">
 import { ref } from 'vue'
@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 $h:22px;
 $h2:18px;
-button{
+.wheel-switch{
     height: $h;
     width: $h*2;
     border:none;
@@ -38,9 +38,9 @@ button{
     &:focus{outline: none;}
     &:active{
         > span{width: $h;}}
-    &.checked{background: #1890ff;
+    &.wheel-checked{background: #1890ff;
         > span {left:calc(100% - #{$h2} - 2px)}}
-    &.checked:active{
+    &.wheel-checked:active{
         >span{ width: $h; margin-left: -4px;}}
 }
 </style>

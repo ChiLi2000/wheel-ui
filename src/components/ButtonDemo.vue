@@ -3,9 +3,9 @@
     <h2>示例1</h2>
     <div>
         <Button >你好</Button>
-        <Button theme="button">你好</Button>
-        <Button theme="link">你好</Button>
-        <Button theme="text">你好</Button>
+        <Button theme="button">button</Button>
+        <Button theme="link">link</Button>
+        <Button theme="text">text</Button>
     </div>
 </template>
 <script lang="ts">
