@@ -7,6 +7,12 @@
         <Button theme="link">link</Button>
         <Button theme="text">text</Button>
     </div>
+     <h2>示例2</h2>
+    <div>
+    <Button size="big">big</Button>
+    <Button>normal</Button>
+    <Button size="small">small</Button>
+  </div>
 </template>
 <script lang="ts">
 import Button from '../lib/Button.vue'
