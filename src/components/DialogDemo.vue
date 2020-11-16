@@ -2,7 +2,7 @@
     <div>Dialog示例</div>
     <h2>示例一</h2>
     <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="x"></Dialog>
+    <Dialog v-model:visible="x"  :closeOnClickOverlay="true"></Dialog>
 </template>
 <script lang="ts">
 import { ref } from 'vue'
