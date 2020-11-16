@@ -1,23 +1,104 @@
 <template>
-    <div class="dialog-overlay"></div>
-    <div class="dialog-wraper">
-        <header>标题</header>
-        <main>
-            <p>第一行</p>
-            <p>第二行</p>
-        </main>
-        <footer>
-            <Button>OK</Button>
-            <Button>Cancel</Button>
-        </footer>
+    <div class="wheel-dialog-overlay"></div>
+    <div class="wheel-dialog-wrapper">
+        <div class="wheel-dialog">
+            <header>标题 <span class="wheel-dialog-close"></span></header>
+            <main>
+                <p>第一行</p>
+                <p>第二行</p>
+            </main>
+            <footer>
+                <Button level="main">OK</Button>
+                <Button>Cancel</Button>
+            </footer>
+        </div>
+        
     </div>
 </template>
 
 <script lang="ts">
-import Button from './Button.vue'
+import Button from "./Button.vue"
 export default {
     components:{
         Button
     }
 }
 </script>
+
+<style lang="scss">
+$radius:4px;
+$border-color:#d9d9d9;
+$fade-out:fade-out(black,0.5);
+$padding:12px 16px;
+.wheel-dialog{
+    background: white;
+    border-radius: $radius;
+    box-shadow: 0 0 3px $fade-out;
+    min-width: 15em;
+    max-width: 90%;
+
+    &-overlay{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $fade-out;
+        z-index:10;
+    }
+
+    &-wrapper{
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        z-index: 11;
+    }
+
+    > header{
+        padding: $padding; 
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    > main{
+        padding: $padding;
+    }
+
+    > footer{
+        border-top: 1px solid $border-color;
+        padding: $padding;
+        text-align: right;
+    }
+
+    &-close{
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        cursor:pointer;
+
+        &::before,&::after{
+            content:"";
+            position: absolute;
+            height: 1px;
+            background: black;
+            width: 100%;
+            top:50%;
+            left:50%;
+        }
+
+        &::before{
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+         &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+}
+    
+</style>
