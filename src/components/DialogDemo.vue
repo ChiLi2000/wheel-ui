@@ -4,7 +4,16 @@
     <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="x"  
     :closeOnClickOverlay="false"
-    :ok="f1" :cancel="f2"></Dialog>
+    :ok="f1" :cancel="f2"
+    >
+    <template v-slot:title>
+        <strong>标题</strong>
+    </template>
+    <template v-slot:content>
+        <strong>hi</strong>
+         <div>hi2</div>
+    </template>    
+    </Dialog>
 </template>
 <script lang="ts">
 import { ref } from 'vue'
