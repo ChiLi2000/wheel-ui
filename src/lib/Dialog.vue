@@ -10,8 +10,8 @@
                 <p>第二行</p>
             </main>
             <footer>
-                <Button level="main">OK</Button>
-                <Button>Cancel</Button>
+                <Button @click="ok" level="main">OK</Button>
+                <Button @click="cancel">Cancel</Button>
             </footer>
         </div>
         
@@ -29,7 +29,13 @@ export default {
         closeOnClickOverlay: {
             type: Boolean,
             default: true
-    },
+        },
+        ok:{
+            type:Function
+        },
+        cancel:{
+            type:Function
+        }
     },
     components:{
         Button
@@ -41,9 +47,19 @@ export default {
         const onClickOverlay = () => {
             if (props.closeOnClickOverlay) {
                 close()
+            }
         }
-    }
-        return {close,onClickOverlay}
+        const ok = ()=>{
+            if(props.ok?.() !== false){
+                close()
+            }
+        }
+        const cancel = ()=>{
+            props.cancel?.()
+            close()
+        }
+    
+        return {close,onClickOverlay,ok,cancel}
     }
 }
 </script>
