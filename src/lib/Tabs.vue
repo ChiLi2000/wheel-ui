@@ -6,22 +6,21 @@
              @click="select(t)" :class="{selected: t===selected}">{{t}}</div>
         </div>
          <div class="wheel-tabs-content">
-             <component class="wheel-tabs-content-item" 
-             v-for="(c,index) in defaults" :is="c" :key="index" 
-              :class="{selected: c.props.title===selected}"/>
+             <component :is="current" :key="current.props.title"/>
          </div>
     </div>
 </template>
 
 <script lang='ts'>
 import Tab from './Tab.vue'
+import {computed} from 'vue'
 export default {
     props:{
         selected:{
             type:String
         }
     },
-    setup(prors,context){
+    setup(props,context){
         const defaults = context.slots.default()
         defaults.forEach((tag)=>{
             if(tag.type !== Tab){
@@ -34,7 +33,10 @@ export default {
         const select=(title:string)=>{
             context.emit('update:selected',title)
         }
-        return {defaults,titles,select}
+        const current = computed(()=>{
+            return defaults.find(tag=>tag.props.title === props.selected)
+        })
+        return {defaults,titles,select,current}
     }
 }
 </script>
@@ -67,14 +69,6 @@ $border-color:#d9d9d9;
 
     &-content{
         padding:8px 0;
-
-        &-item {
-            display: none;
-
-            &.selected {
-                    display: block;
-                }
-        }
     }
 }
 </style>
