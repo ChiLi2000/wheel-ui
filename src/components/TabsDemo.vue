@@ -3,8 +3,8 @@
     <h2>示例1</h2>
     <hr/>
     <Tabs v-model:selected="x">
-        <Tab title="导航1">内容1</Tab>
-        <Tab title="导航2">内容2</Tab>
+        <Tab title="导航111111">内容1</Tab>
+        <Tab title="导航">内容2</Tab>
     </Tabs>
 </template>
 
@@ -17,7 +17,7 @@ export default {
         Tabs,Tab
     },
     setup(){
-        const x=ref('导航1')
+        const x=ref('导航111111')
         return {
             x
         }
