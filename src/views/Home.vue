@@ -1,5 +1,6 @@
 <template>
-    <div class="topnavAndBanner">
+<div>
+     <div class="topnavAndBanner">
         <Topnav/>
         <div class="banner">
             <h1>轮子UI</h1>
@@ -10,6 +11,19 @@
             </p>
         </div>
     </div>
+    <div class="features">
+         <svg class="icon">
+            <use xlink:href="#icon-Vue"></use>
+        </svg>
+        <svg class="icon">
+            <use xlink:href="#icon-ts"></use>
+        </svg>
+        <svg class="icon">
+            <use xlink:href="#icon-light"></use>
+        </svg>
+    </div>
+</div>
+   
 </template>
 <script lang="ts">
 import Topnav from '../components/Topnav.vue'
@@ -21,6 +35,12 @@ export default {
 $border-radius:4px;
 .topnavAndBanner{
     background:linear-gradient(312deg, rgba(31,31,31,1) 0%, rgba(255,255,255,1) 0%, rgba(209,150,254,1) 0%, rgba(241,224,255,1) 100%);
+}
+.features{
+    >svg{
+        width:64px;
+        height: 64px;
+    }
 }
 .banner{
     color:#8a4aba;
