@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topnavAndBanner">
         <Topnav/>
         <div class="banner">
             <h1>轮子UI</h1>
@@ -18,24 +18,26 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$border-radius:4px;
+.topnavAndBanner{
+    background:linear-gradient(312deg, rgba(31,31,31,1) 0%, rgba(255,255,255,1) 0%, rgba(209,150,254,1) 0%, rgba(241,224,255,1) 100%);
+}
 .banner{
-    position: 100px 0;
+    color:#8a4aba;
+    padding: 100px 0;
     display: flex;
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    background-color:lightcoral;
     > .actions{
         padding: 8px 0;
         a{
             margin:0 8px;
-            background: #ffffff;
+            color:#ffffff;
+           background: linear-gradient(180deg, rgba(209,150,254,1) 0%, rgba(183,93,251,1) 100%);
             display: inline-block;
-            $h:28px;
-            height: $h;
-            line-height: $h;
-            border-radius: $h/2;
-            padding: 0 8px;
+            border-radius: $border-radius;
+            padding: 8px 24px;
         }
     }
 }
