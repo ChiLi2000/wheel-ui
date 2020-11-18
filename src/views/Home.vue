@@ -35,6 +35,7 @@ export default {
 $border-radius:4px;
 .topnavAndBanner{
     background:linear-gradient(312deg, rgba(31,31,31,1) 0%, rgba(255,255,255,1) 0%, rgba(209,150,254,1) 0%, rgba(241,224,255,1) 100%);
+    clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features{
     >svg{
@@ -54,7 +55,7 @@ $border-radius:4px;
         a{
             margin:0 8px;
             color:#ffffff;
-           background: linear-gradient(180deg, rgba(209,150,254,1) 0%, rgba(183,93,251,1) 100%);
+            background: linear-gradient(180deg, rgba(209,150,254,1) 0%, rgba(183,93,251,1) 100%);
             display: inline-block;
             border-radius: $border-radius;
             padding: 8px 24px;
