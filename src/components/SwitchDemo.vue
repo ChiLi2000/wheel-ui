@@ -4,19 +4,20 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1Demo/>
+        <component :is="Switch1Demo"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
      </div>
     <div class="demo-code">
-      <pre>{{Switch1Demo.__sourceCode}}</pre>
+         <pre 
+          v-html="Prism.highlight(Switch1Demo.__sourceCode, Prism.languages.html, 'html')" />
     </div>
   </div>
   <div class="demo">
     <h2>支持 disabled </h2>
     <div class="demo-component">
-      <Switch2Demo/>
+      <component :is="Switch2Demo"/>
     </div>
     <div class="demo-actions">
       <Button>查看代码</Button>
@@ -33,12 +34,15 @@ import { ref } from "vue";
 import Button from '../lib/Button.vue'
 import Switch1Demo from './Switch1.demo.vue';
 import Switch2Demo from './Switch2.demo.vue';
+import 'prismjs';
+// import 'prismjs/themes/prism.css';
+const Prism = (window as any).Prism
 
 export default {
-  components: { Switch1Demo,Switch2Demo,Button},
+  components: {Button},
   setup() {
     const bool = ref(false);
-    return { bool ,Switch1Demo,Switch2Demo};
+    return { bool ,Switch1Demo ,Switch2Demo ,Prism};
   },
 };
 </script>
