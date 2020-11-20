@@ -85,7 +85,7 @@ $padding:12px 16px;
         width: 100%;
         height: 100%;
         background: $fade-out;
-        z-index:10;
+        z-index:30;
     }
 
     &-wrapper{
@@ -93,7 +93,7 @@ $padding:12px 16px;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
-        z-index: 11;
+        z-index: 31;
     }
 
     > header{

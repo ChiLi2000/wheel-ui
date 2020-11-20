@@ -10,7 +10,11 @@
                     <router-link to="/doc">文档</router-link>
                 </li>
             </ul>
-            <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+            <svg 
+            v-if="toggleMenuButtonVisible" 
+            class="toggleAside" 
+            @click="toggleMenu"
+            >
                 <use xlink:href="#icon-menu"></use>
             </svg>
         </div>
@@ -43,7 +47,7 @@ export default {
        top:0;
        left:0;
        width:100%;
-       z-index: 10;
+       z-index: 20;
        justify-content: center;
        align-items: center;
        > .logo{
