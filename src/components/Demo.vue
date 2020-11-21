@@ -9,7 +9,7 @@
         <Button @click="toggleCode" v-else>查看代码</Button>
      </div>
     <div class="demo-code"  v-if="codeVisible">
-         <pre class="language-html" v-html="html"/>
+         <pre class="language-css" v-html="html"/>
     </div>
   </div>
 </template>
@@ -18,9 +18,8 @@
 import Button from '../lib/Button.vue'
 import {computed,ref} from 'vue';
 import 'prismjs';
-// import 'prismjs/themes/prism.css';
-const Prism = (window as any).Prism
 
+const Prism = (window as any).Prism
 export default {
     components:{Button},
     props:{
