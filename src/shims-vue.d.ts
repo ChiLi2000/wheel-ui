@@ -7,3 +7,7 @@ declare module '*.vue' {
     const str: String 
     export default str 
   }
+  // declare module 'custom.d.ts'{
+  //   const tableList:tableList
+  //   export default tableList
+  // }
