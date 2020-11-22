@@ -16,10 +16,6 @@ export default {
       type: String,
       default: "normal",
     },
-    level: {
-      type: String,
-      default: "normal",
-    },
     disabled: {
       type: Boolean,
       default: false,
@@ -30,12 +26,11 @@ export default {
     },
   },
   setup(props) {
-    const { theme, size, level } = props;
+    const { theme, size } = props;
     const classes = computed(() => {
       return {
         [`wheel-theme-${theme}`]: theme,
         [`wheel-size-${size}`]: size,
-        [`wheel-level-${level}`]: level,
       };
     });
     return { classes };
@@ -46,7 +41,7 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #8a4aba;
+$blue: #1890ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
@@ -66,7 +61,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
   & + & {
-    margin-left: 8px;
+    margin-left: 12px;
   }
   &:hover,
   &:focus {
@@ -97,7 +92,7 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.wheel-size-big {
+  &.wheel-size-large {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
@@ -107,52 +102,37 @@ $grey: grey;
     height: 20px;
     padding: 0 4px;
   }
-  &.wheel-theme-button {
-    &.wheel-level-main {
-      background: $blue;
-      color: white;
-      border-color: $blue;
-      &:hover,
-      &:focus {
-        background: darken($blue, 10%);
-        border-color: darken($blue, 10%);
-      }
-    }
-    &.wheel-level-danger {
-      background: $red;
-      border-color: $red;
-      color: white;
-      &:hover,
-      &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
-      }
+
+  &.wheel-theme-main {
+    background: $blue;
+    color: white;
+    border-color: $blue;
+    &:hover,
+    &:focus {
+      background: darken($blue, 10%);
+      border-color: darken($blue, 10%);
     }
   }
-  &.wheel-theme-link {
-    &.wheel-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
+  &.wheel-theme-danger {
+    background: $red;
+    border-color: $red;
+    color: white;
+    &:hover,
+    &:focus {
+      background: darken($red, 10%);
+      border-color: darken($red, 10%);
     }
   }
-  &.wheel-theme-text {
-    &.wheel-level-main {
-      color: $blue;
-      &:hover,
-      &:focus {
-        color: darken($blue, 10%);
-      }
-    }
-    &.wheel-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
-    }
+  > .wheel-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: wheel-spin 1s infinite linear;
   }
   &.wheel-theme-button {
     &[disabled] {
@@ -169,17 +149,6 @@ $grey: grey;
       cursor: not-allowed;
       color: $grey;
     }
-  }
-  > .wheel-loadingIndicator {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    margin-right: 4px;
-    border-radius: 8px;
-    border-color: $blue $blue $blue transparent;
-    border-style: solid;
-    border-width: 2px;
-    animation: wheel-spin 1s infinite linear;
   }
 }
 @keyframes wheel-spin {

@@ -23,12 +23,12 @@ export default {
     const tableList = ref<TableList>([
       {
         name: "value",
-        description: "绑定值，可以使用 v-model 双向绑定数据",
+        description: "绑定值",
         type: "boolean",
         default: "false",
       },
       {
-        name: "disable",
+        name: "disabled",
         description: "是否禁用",
         type: "boolean",
         default: "false",

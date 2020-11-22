@@ -2,17 +2,18 @@
   常规用法
 </demo>
 <template>
-    <div>
-        <Button @click="onClick">你好</Button>
-        <Button theme="button">button</Button>
-        <Button theme="link">link</Button>
-        <Button theme="text">text</Button>
-    </div>
+  <div>
+    <Button>普通按钮</Button>
+    <Button theme="link">链接按钮</Button>
+    <Button theme="text">文本按钮</Button>
+    <Button theme="main">主要按钮</Button>
+    <Button theme="danger">危险按钮</Button>
+  </div>
 </template>
 
 <script lang="ts">
-import Button from '../lib/Button.vue'
+import Button from "../lib/Button.vue";
 export default {
-    components:{Button}
-}
+  components: { Button },
+};
 </script>
