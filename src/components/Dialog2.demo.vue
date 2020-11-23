@@ -1,31 +1,26 @@
 <demo>一键打开 Dialog</demo>
 <template>
-<div>
+  <div>
     <Button @click="showDialog">打开对话框</Button>
-</div>
+  </div>
 </template>
 
 <script lang="ts">
-import {h} from 'vue'
-import Button from '../lib/Button.vue'
-import {openDialog} from '../lib/openDialog'
+import { h } from "vue";
+import Button from "../lib/Button.vue";
+import { openDialog } from "../lib/openDialog";
 export default {
-    components:{Button},
-    setup(){
-        const showDialog = ()=>{
-            openDialog({
-                title:h('strong',{},'标题'),
-                content:'你好',
-                closeOnClickOverlay:'true',
-                 ok() {
-                    console.log('ok')
-                },
-                cancel() {
-                    console.log('cancel')
-                }
-            })
-        }
-        return {showDialog}
-    }
-}
+  components: { Button },
+  setup() {
+    const showDialog = () => {
+      openDialog({
+        title: h("p", {}, "标题"),
+        content: "这是一段内容",
+        ok() {},
+        cancel() {},
+      });
+    };
+    return { showDialog };
+  },
+};
 </script>
