@@ -6,6 +6,7 @@
     <Demo :component="Button2Demo" />
     <Demo :component="Button3Demo" />
     <Demo :component="Button4Demo" />
+    <h3>Attributes</h3>
     <TableDemo :tdList="tableList" />
   </div>
 </template>
