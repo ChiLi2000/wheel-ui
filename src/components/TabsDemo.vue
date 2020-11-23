@@ -21,9 +21,15 @@ export default {
     const tableList = ref<TableList>([
       {
         name: "selected",
-        description: "绑定值，使用 v-model 双向绑定数据",
-        type: "boolean",
-        default: "false",
+        description: "指定当前选中的标签页，使用 v-model 双向绑定数据",
+        type: "-",
+        default: "第一个标签页",
+      },
+      {
+        name: "title",
+        description: "选项卡标题",
+        type: "string",
+        default: "-",
       },
     ]);
     return { Tab1Demo, tableList };

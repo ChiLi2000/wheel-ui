@@ -36,7 +36,7 @@ $border-color: #d9d9d9;
   width: 100%;
   border: 1px solid $border-color;
   th {
-    padding: 15px 15px 15px 10px;
+    padding: 15px;
     text-align: left;
     color: #5c6b77;
     font-size: 16px;
@@ -45,7 +45,7 @@ $border-color: #d9d9d9;
 
   td {
     border-top: 1px solid $border-color;
-    padding: 15px 15px 15px 10px;
+    padding: 15px;
   }
 }
 </style>
