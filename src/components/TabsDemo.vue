@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Tabs 示例</h1>
+    <p>选项卡切换组件</p>
     <Demo :component="Tab1Demo" />
     <h3>Attributes</h3>
     <TableDemo :tdList="tableList" />
@@ -36,3 +37,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+h1 {
+  padding-bottom: 14px;
+}
+</style>
