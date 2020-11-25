@@ -8,7 +8,6 @@
     <Demo :component="Button4Demo" />
     <h3>Attributes</h3>
     <TableDemo :tdList="tableList" />
-    <goTop />
   </div>
 </template>
 <script lang="ts">
@@ -20,9 +19,8 @@ import Button3Demo from "./Button3.demo.vue";
 import Button4Demo from "./Button4.demo.vue";
 import Demo from "./Demo.vue";
 import TableDemo from "./TableDemo.vue";
-import goTop from "./goTop.vue";
 export default {
-  components: { Button, Demo, TableDemo, goTop },
+  components: { Button, Demo, TableDemo },
   setup() {
     const tableList = ref<TableList>([
       {

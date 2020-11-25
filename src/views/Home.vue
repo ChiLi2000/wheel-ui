@@ -3,8 +3,7 @@
     <div class="topnavAndBanner">
       <Topnav />
       <div class="banner">
-        <h1>轮子UI</h1>
-        <h2>一个很哇塞的 UI 框架</h2>
+        <h1>Vue UI 框架</h1>
         <p class="actions">
           <a href="https://github.com">Github</a>
           <router-link to="/doc">开始</router-link>
@@ -119,8 +118,9 @@ $border-radius: 4px;
   flex-direction: column;
   > .actions {
     padding: 8px 0;
+    margin-top: 10px;
     a {
-      margin: 0 8px;
+      margin: 0 16px;
       color: #ffffff;
       background: linear-gradient(
         180deg,

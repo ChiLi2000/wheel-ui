@@ -76,7 +76,7 @@ export default {
       display: none;
     }
     > .logo {
-      margin-right: 32px;
+      margin-right: 8px;
     }
     > .toggleAside {
       display: inline-block;
