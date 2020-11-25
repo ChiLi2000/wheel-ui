@@ -2,7 +2,7 @@
   <div class="layout">
     <Topnav :toggleMenuButtonVisible="true" class="nav" />
     <div class="content">
-      <aside v-if="menuVisible">
+      <aside ref="asideDemo">
         <h2>文档</h2>
         <ol>
           <li>
@@ -38,19 +38,33 @@
   </div>
 </template>
 <script lang="ts">
-import { inject, Ref } from "vue";
+import { inject, onMounted, Ref, ref, watchEffect } from "vue";
 import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
-    return { menuVisible };
+    const asideDemo = ref<HTMLDivElement>(null);
+    onMounted(() => {
+      watchEffect(
+        () => {
+          const { width } = asideDemo.value.getBoundingClientRect();
+          if (menuVisible.value) {
+            asideDemo.value.style.left = 0 + "px";
+          } else {
+            asideDemo.value.style.left = -width + "px";
+          }
+        },
+        { flush: "post" }
+      );
+    });
+    return { menuVisible, asideDemo };
   },
 };
 </script>
 <style lang="scss" scoped>
 $aside-index: 10;
-
+$color: #8a4aba;
 .layout {
   display: flex;
   flex-direction: column;
@@ -80,12 +94,27 @@ $aside-index: 10;
     background: white;
     overflow: auto;
     padding: 12px 36px 60px 36px;
-    @media (max-width: 500px) {
-      padding: 12px 16px 60px 16px;
-    }
   }
 }
 
+@media (max-width: 500px) {
+  .content {
+    position: relative;
+    margin-top: 6px;
+    > aside {
+      background: white;
+      position: absolute;
+      transition: 300ms;
+    }
+    > main {
+      position: absolute;
+      min-width: 100%;
+      max-height: 100%;
+      overflow: auto;
+      padding: 42px 16px 60px 16px;
+    }
+  }
+}
 aside {
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   height: 100%;
@@ -103,11 +132,11 @@ aside {
       }
       .router-link-active {
         background: #ebd2ff;
-        border-right: 3px solid #8a4aba;
-        color: #8a4aba;
+        border-right: 3px solid $color;
+        color: $color;
       }
       &:hover {
-        color: #8a4aba;
+        color: $color;
       }
     }
   }
