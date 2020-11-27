@@ -6,7 +6,7 @@ import { terser } from "rollup-plugin-terser"
 
 export default {
   input: 'src/lib/index.ts',
-  output: {
+  output: [{
     globals: {
       vue: 'Vue'
     },
@@ -15,6 +15,12 @@ export default {
     format: 'umd',
     plugins: [terser()]
   },
+  {
+    name: 'Wheel',
+    file: 'dist/lib/wheel.esm.js',
+    format: 'es',
+    plugins: [terser()]
+  }],
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
     esbuild({
