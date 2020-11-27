@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install wheel-ui
+npm install chili-wheel
 ```
 
 或
 
 ```
-yarn add wheel-ui
+yarn add chili-wheel
 ```
 
 下一节：[开始使用](#/doc/get-started)
