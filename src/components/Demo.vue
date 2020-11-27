@@ -15,7 +15,7 @@
         </svg>
         <span>隐藏代码</span>
       </div>
-      <div @click="toggleCode" v-else class="commonCode">
+      <div @click="toggleCode" v-if="!codeVisible" class="commonCode">
         <svg class="icon">
           <use xlink:href="#icon-down"></use>
         </svg>
