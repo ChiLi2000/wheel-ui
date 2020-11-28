@@ -1,6 +1,6 @@
 # 介绍
 
-chili-ui 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
+Wheel UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
 
 这款组件库其实是我为了总结自己在学习 Vue 3 和 TypeScript 的过程中获得的学习经验而写的，全程亲手编写，尽量不采用第三方库，包括你现在看到的这个官网也几乎都是我自己写的。
 

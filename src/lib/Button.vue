@@ -4,14 +4,8 @@
     <slot />
   </button>
 </template>
-<script lang="ts" setup="props">
+<script lang="ts" >
 import { computed } from "vue";
-declare const props: {
-  theme?: "button" | "text" | "link" | "main" | "danger";
-  size?: "normal" | "large" | "small";
-  disabled: boolean;
-  loading: boolean;
-};
 export default {
   props: {
     theme: {
@@ -31,15 +25,17 @@ export default {
       default: false,
     },
   },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`wheel-theme-${theme}`]: theme,
+        [`wheel-size-${size}`]: size,
+      };
+    });
+    return { classes };
+  },
 };
-
-const { theme, size } = props;
-export const classes = computed(() => {
-  return {
-    [`wheel-theme-${theme}`]: theme,
-    [`wheel-size-${size}`]: size,
-  };
-});
 </script>
 
 <style lang="scss">
