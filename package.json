@@ -1,6 +1,6 @@
 {
-  "name": "chili-wheel",
-  "version": "0.0.2",
+  "name": "wheel-ui-chili",
+  "version": "0.0.3",
   "files": [
     "dist/lib/*"
   ],
