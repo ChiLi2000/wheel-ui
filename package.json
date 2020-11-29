@@ -1,6 +1,6 @@
 {
   "name": "chili-wheel",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "files": [
     "dist/lib/*"
   ],
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "github-markdown-css": "4.0.0",
-    "install": "^0.13.0",
     "marked": "1.1.1",
     "prismjs": "1.21.0",
     "vue": "3.0.0",
